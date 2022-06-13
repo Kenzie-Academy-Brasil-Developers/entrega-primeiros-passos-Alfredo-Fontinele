@@ -24,6 +24,6 @@ if (total % 2 === 0) {
 } else {
     let voce = metade;
     let amigo = metade;
-    alert(`\nValor Total: R$${total.toFixed(2)} ===> Valor Par\n\nVocê deverá pagar ==> R$${voce.toFixed(2)}\nSeu amigo deverá pagar ==> R$${amigo.toFixed(2)}\n`);
+    alert(`\nValor Total: R$${total.toFixed(2)} ===> Valor Ímpar\n\nVocê deverá pagar ==> R$${voce.toFixed(2)}\nSeu amigo deverá pagar ==> R$${amigo.toFixed(2)}\n`);
     console.log(`\nValor Total: R$${total.toFixed(2)} ===> Valor Ímpar\n\nVocê deverá pagar ==> R$${voce.toFixed(2)}\nSeu amigo deverá pagar ==> R$${amigo.toFixed(2)}\n`);
 }
