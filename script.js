@@ -1,7 +1,21 @@
+// Tabela
+
+// Produto	        Quantidade	Valor Unitário
+// Refrigerante	        3           11,99
+// Macarrão	            4	        6,99
+// Ervilha	            3	        6,99
+// Arroz	            3	        22,99
+// Feijão	            2	        11,89
+// Vinho	            3	        70,00
+
+// Esse algoritmo não se limita apenas aos produtos dessa tabela;
+// Podem ser colocados n produtos, cada com seus respectivos preços e quantidades;
+// Mas, sempre contabilizando com o preço e a quantidade de vinho que é uma const;
+
 let total = 0;
 let count = 1;
 
-let quantidade_produtos = parseInt(prompt("Digite a Quantidade Total de Produtos da tabela deste exercicio (com exceção do vinho): "));
+let quantidade_produtos = parseInt(prompt("Digite a Quantidade Total de Produtos da tabela deste exercicio (com exceção do vinho que já está sendo contabilizado): "));
 
 for (let i = 0; i < quantidade_produtos; i++) {
     let produto = prompt(`Digite o nome do ${count}º Produto:`);
