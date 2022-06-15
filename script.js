@@ -8,36 +8,56 @@
 // Feijão	            2	        11,89
 // Vinho	            3	        70,00
 
-// Esse algoritmo não se limita apenas aos produtos dessa tabela;
-// Podem ser colocados n produtos, cada com seus respectivos preços e quantidades;
-// Mas, sempre contabilizando com o preço e a quantidade de vinho que é uma const;
+// Multiplique o valor de cada item pela quantidade e atribua 
+// a uma variável (Cada total em uma variável diferente).
 
-let total = 0;
-let count = 1;
+// Some as variáveis e atribua a uma nova variável "total".
+// Teste se a variável "total" é ímpar ou par.
 
-let quantidade_produtos = parseInt(prompt("Digite a Quantidade Total de Produtos da tabela deste exercicio (com exceção do vinho que já está sendo contabilizado): "));
+// Se a variável "total" for ímpar, cada amigo deverá pagar metade do 
+// valor total da compra, incluindo o vinho.
 
-for (let i = 0; i < quantidade_produtos; i++) {
-    let produto = prompt(`Digite o nome do ${count}º Produto:`);
-    let quantidade = parseInt(prompt(`Digite a Quantidade desejada de ${produto}:`));
-    let preco = parseFloat(prompt(`Digite o Preço do(a) ${produto}:`));
-    total += preco * quantidade;
-    count++;
-}
+// Se a variável "total" for par você pagará somente a metade e seu amigo
+// pagará a metade mais o valor do vinho.
 
-const valor_vinho = 3 * 70;
-total += valor_vinho;
+const qtd_refrigerante = parseInt(prompt("Digite a quantidade de Refrigerante: "));
+const preco_refrigerante = parseFloat(prompt("Digite o preço por unidade do Refrigerante: "));
 
-let metade = total / 2;
+const qtd_macarrao = parseInt(prompt("Digite a quantidade de Macarrão: "));
+const preco_macarrao = parseFloat(prompt("Digite o preço por unidade do Macarrão: "));
 
-if (total % 2 === 0) {
-    let voce = metade - valor_vinho;
-    let amigo = metade + valor_vinho;
-    alert(`\nValor Total: R$${total.toFixed(2)} ==> Valor Par\n\nVocê deverá pagar ==> R$${voce.toFixed(2)}\nSeu amigo deverá pagar ==> R$${amigo.toFixed(2)}\n`);
-    console.log(`\nValor Total: R$${total.toFixed(2)} ==> Valor Par\n\nVocê deverá pagar ==> R$${voce.toFixed(2)}\nSeu amigo deverá pagar ==> R$${amigo.toFixed(2)}\n`);
+const qtd_ervilha = parseInt(prompt("Digite a quantidade de Ervilha: "));
+const preco_ervilha = parseFloat(prompt("Digite o preço por unidade do Ervilha: "));
+
+const qtd_arroz = parseInt(prompt("Digite a quantidade de Arroz: "));
+const preco_arroz = parseFloat(prompt("Digite o preço por unidade do Arroz: "));
+
+const qtd_feijao = parseInt(prompt("Digite a quantidade de Feijão: "));
+const preco_feijao = parseFloat(prompt("Digite o preço por unidade do Feijão: "));
+
+const qtd_vinho = parseInt(prompt("Digite a quantidade de Vinho: "));
+const preco_vinho = parseFloat(prompt("Digite o preço por unidade do Vinho: "));
+
+const total = (
+    (qtd_refrigerante * preco_refrigerante) + 
+    (qtd_macarrao * preco_macarrao) + 
+    (qtd_ervilha * preco_ervilha) + 
+    (qtd_arroz * preco_arroz) + 
+    (qtd_feijao * preco_feijao) + 
+    (qtd_vinho * preco_vinho)
+);
+
+const vinho = qtd_vinho * preco_vinho;
+const metade = total / 2;
+
+if (total % 2 == 0) {
+    let voce = metade - vinho;
+    let amigo = metade + vinho;
+    alert(`Valor Total: R$${total} (Par)\nVocê vai pagar: R$${voce}\nSeu amigo vai pagar: R$${amigo}`);
+    console.log(`Valor Total: R$${total}\nVocê vai pagar: R$${voce}\nSeu amigo vai pagar: R$${amigo}`);
 } else {
     let voce = metade;
     let amigo = metade;
-    alert(`\nValor Total: R$${total.toFixed(2)} ===> Valor Ímpar\n\nVocê deverá pagar ==> R$${voce.toFixed(2)}\nSeu amigo deverá pagar ==> R$${amigo.toFixed(2)}\n`);
-    console.log(`\nValor Total: R$${total.toFixed(2)} ===> Valor Ímpar\n\nVocê deverá pagar ==> R$${voce.toFixed(2)}\nSeu amigo deverá pagar ==> R$${amigo.toFixed(2)}\n`);
+    alert(`Valor Total: R$${total} (Ímpar)\nVocê vai pagar: R$${voce}\nSeu amigo vai pagar: R$${amigo}`);
+    console.log(`Valor Total: R$${total}\nVocê vai pagar: R$${voce}\nSeu amigo vai pagar: R$${amigo}`);
 }
